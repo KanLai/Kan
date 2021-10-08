@@ -1,5 +1,5 @@
 <?php
-namespace app\Common;
+namespace Kan;
 
 class Aes
 {
