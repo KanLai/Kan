@@ -24,6 +24,10 @@ class ComposerStaticInitae3712bb16d8a4943f2a1508191c19e8
         array (
             'MyCLabs\\Enum\\' => 13,
         ),
+        'K' => 
+        array (
+            'Kan\\' => 4,
+        ),
         'H' => 
         array (
             'Http\\Promise\\' => 13,
@@ -53,6 +57,10 @@ class ComposerStaticInitae3712bb16d8a4943f2a1508191c19e8
         'MyCLabs\\Enum\\' => 
         array (
             0 => __DIR__ . '/..' . '/myclabs/php-enum/src',
+        ),
+        'Kan\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src',
         ),
         'Http\\Promise\\' => 
         array (
