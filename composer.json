@@ -1,0 +1,22 @@
+{
+    "name": "kan/util",
+    "description": "kan toos",
+    "type": "library",
+    "require": {
+        "php": ">=8.0",
+        "guzzlehttp/guzzle": "^7.0",
+        "paquettg/php-html-parser": "^3.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kan\\": "src"
+        }
+    },
+    "license": "apache2.0",
+    "authors": [
+        {
+            "name": "kanlai.com.cn",
+            "email": "admin@kanlai.com.cn"
+        }
+    ]
+}
