@@ -87,9 +87,9 @@ class LanZou
         $url = $this->getUrl();
         $bool = preg_match('/data : \'(.*?)&p=\'\+pwd/', $this->body, $params);
         if ($bool != false) {
-            $reslt = end($params);
-            $reslt .= '&p=' . $this->pw;
-            parse_str($reslt, $arr);
+            $result = end($params);
+            $result .= '&p=' . $this->pw;
+            parse_str($result, $arr);
             $data = new stdClass();
             $data->url = $url;
             $data->data = $arr;
