@@ -7,14 +7,17 @@
  * @ex LanZou::get($url,$password);
  * @return object item {code:1 || 0 ,real="real link",msg="error"}
  */
+
 namespace Kan;
 
 use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
+use GuzzleHttp\HandlerStack;
 use PHPHtmlParser\Dom;
 use stdClass;
 use Throwable;
+use Yurun\Util\Swoole\Guzzle\SwooleHandler;
 
 class LanZou
 {
@@ -23,15 +26,18 @@ class LanZou
     protected Client $client;
     private string $body;
     private string $pw;
+    private static bool $isService = false;
 
     /**
      * start get real link parse
      * @param string $url
+     * @param bool $isService
      * @param string $pw
      * @return object
      */
-    public static function get(string $url, string $pw = ""): object
+    public static function get(string $url, bool $isService = false, string $pw = ""): object
     {
+        self::$isService = $isService;
         if (is_null(self::$lanZou)) {
             self::$lanZou = new static ($url, $pw);
         }
@@ -47,14 +53,29 @@ class LanZou
     {
         $params = parse_url($this->url);
         $baseUrl = "https://{$params['host']}/";
-        $this->client = new Client([
-            'base_uri' => $baseUrl,
-            'timeout' => 60,
-            'headers' => [
-                'User-Agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36',
-                'referer' => $baseUrl
-            ]
-        ]);
+        if (self::$isService) {
+            $handler =new SwooleHandler();
+            $stack = HandlerStack::create($handler);
+            $this->client = new Client([
+                'handler' => $stack,
+                'base_uri' => $baseUrl,
+                'timeout' => 60,
+                'headers' => [
+                    'User-Agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36',
+                    'referer' => $baseUrl
+                ]
+            ]);
+        }else{
+            $this->client = new Client([
+                'base_uri' => $baseUrl,
+                'timeout' => 60,
+                'headers' => [
+                    'User-Agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36',
+                    'referer' => $baseUrl
+                ]
+            ]);
+        }
+
     }
 
     /**
