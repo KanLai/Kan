@@ -49,7 +49,7 @@ class LanZou
      * init http client
      * @return void
      */
-    private function initHttp()
+    private function initHttp(): void
     {
         $params = parse_url($this->url);
         $baseUrl = "https://{$params['host']}/";
@@ -86,7 +86,7 @@ class LanZou
     {
         $url = $this->getUrl();
         $bool = preg_match('/data : \'(.*?)&p=\'\+pwd/', $this->body, $params);
-        if ($bool != false) {
+        if ($bool) {
             $result = end($params);
             $result .= '&p=' . $this->pw;
             parse_str($result, $arr);
@@ -166,7 +166,7 @@ class LanZou
         try {
             $bool = preg_match('/\'action\':\'(.*?)\',\'signs\':(.*?),\'sign\':(.*?),\'ves\':(.*?),\'websign\':\'(.*?)\',\'websignkey\':\'(.*?)\'/', $this->body, $arr);
             $data = new stdClass();
-            if ($bool != false) {
+            if ($bool) {
                 $url = $this->getUrl();
                 $ajaxData = ($this->getAjaxDataValue($arr[2]));
                 $pDownload = $this->getPDownload($arr[3]);
@@ -193,7 +193,7 @@ class LanZou
     private function getUrl(): string
     {
         $bool = preg_match('/url : \'(.*?)\',/', $this->body, $arr);
-        if ($bool != false) {
+        if ($bool) {
             return $arr[1];
         }
         throw  new Exception('url is empty');
@@ -205,7 +205,7 @@ class LanZou
     private function getPDownload(string $name): string
     {
         $bool = preg_match('/' . $name . ' = \'(.*?)\';/', $this->body, $arr);
-        if ($bool != false) {
+        if ($bool) {
             return $arr[1];
         }
         throw  new Exception('pDownload is empty');
@@ -217,7 +217,7 @@ class LanZou
     private function getAjaxDataValue(string $name): string
     {
         $bool = preg_match('/' . $name . ' = \'(.*?)\';/', $this->body, $arr);
-        if ($bool != false) {
+        if ($bool) {
             return $arr[1];
         }
         throw  new Exception('ajaxData is empty');

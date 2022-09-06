@@ -38,7 +38,7 @@ class Rsa
     /**
      * createRsaPemFile
      */
-    private function createRsa()
+    private function createRsa(): void
     {
         $res = openssl_pkey_new(
             [

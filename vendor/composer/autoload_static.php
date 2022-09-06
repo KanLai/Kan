@@ -7,14 +7,14 @@ namespace Composer\Autoload;
 class ComposerStaticInitc5e2bc971f454b3fadf70a7cb34108ad
 {
     public static $files = array (
-        '3649b871983645551f91edb232caef53' => __DIR__ . '/..' . '/yurunsoft/guzzle-swoole/src/load_include.php',
-        '98d2f4cb82e20fd9a83d07f1f68bc196' => __DIR__ . '/..' . '/yurunsoft/guzzle-swoole/src/functions.php',
+        'f88eb46d23eccb6a7234937cb81a95ff' => __DIR__ . '/..' . '/yurunsoft/guzzle-swoole/src/load_include.php',
+        '917b06ce1d3753b213acdfcac9e3b240' => __DIR__ . '/..' . '/yurunsoft/guzzle-swoole/src/functions.php',
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
-        'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
-        '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
+        'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         'ad155f8f1cf0d418fe49e248db8c661b' => __DIR__ . '/..' . '/react/promise/src/functions_include.php',
+        '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -119,8 +119,8 @@ class ComposerStaticInitc5e2bc971f454b3fadf70a7cb34108ad
         ),
         'GuzzleHttp\\' => 
         array (
-            0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
-            1 => __DIR__ . '/..' . '/yurunsoft/guzzle-swoole/src/GuzzleHttp',
+            0 => __DIR__ . '/..' . '/yurunsoft/guzzle-swoole/src/GuzzleHttp',
+            1 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
         ),
         'ComposerIncludeFiles\\' => 
         array (
@@ -140,6 +140,7 @@ class ComposerStaticInitc5e2bc971f454b3fadf70a7cb34108ad
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'Stringable' => __DIR__ . '/..' . '/myclabs/php-enum/stubs/Stringable.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
