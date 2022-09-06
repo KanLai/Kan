@@ -20,6 +20,6 @@ return array(
     'GuzzleHttp\\Ring\\' => array($vendorDir . '/guzzlehttp/ringphp/src'),
     'GuzzleHttp\\Psr7\\' => array($vendorDir . '/guzzlehttp/psr7/src'),
     'GuzzleHttp\\Promise\\' => array($vendorDir . '/guzzlehttp/promises/src'),
-    'GuzzleHttp\\' => array($vendorDir . '/yurunsoft/guzzle-swoole/src/GuzzleHttp', $vendorDir . '/guzzlehttp/guzzle/src'),
+    'GuzzleHttp\\' => array($vendorDir . '/guzzlehttp/guzzle/src', $vendorDir . '/yurunsoft/guzzle-swoole/src/GuzzleHttp'),
     'ComposerIncludeFiles\\' => array($vendorDir . '/yurunsoft/composer-include-files/src'),
 );
