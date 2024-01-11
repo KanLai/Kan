@@ -28,7 +28,7 @@ class YaoPan
      * @param string $pw 提取码
      * @return object item {code:1 || 0 ,real="real link",msg="error"}
      */
-    public static function get(string $url, string $pw): object
+    public static function get(string $url, string $pw = ''): object
     {
         if (is_null(self::$yaoPan)) {
             self::$yaoPan = new static ();

@@ -31,7 +31,7 @@ class LanZou
      * start get real link parse
      * @param string $url
      * @param string $pw
-     * @return object
+     * @return object item {code:1 || 0 ,real="real link",msg="error"}
      */
     public static function get(string $url, string $pw = ""): object
     {

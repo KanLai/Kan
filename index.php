@@ -1,10 +1,12 @@
 <?php
-use KanLai\YaoReal;
+
+use KanLai\YaoPan;
+
 
 //提取码:1234
 require 'vendor/autoload.php';
 
-$data = YaoReal::get('Real','1.unitypackage');
+$data = YaoPan::get('https://www.123pan.com/s/k20Njv-hpJo3.html');
 echo <<<HTML
 <a href="$data->real">下载</a>
 HTML;
