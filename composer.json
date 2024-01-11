@@ -1,5 +1,5 @@
 {
-    "name": "kanlai/app",
+    "name": "kanlai/util",
     "autoload": {
         "psr-4": {
             "KanLai\\": "src/"
