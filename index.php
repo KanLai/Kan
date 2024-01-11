@@ -1,7 +1,4 @@
 <?php
-
-
-
 use KanLai\YaoReal;
 
 //提取码:1234
