@@ -1,0 +1,26 @@
+{
+    "name": "kanlai/app",
+    "autoload": {
+        "psr-4": {
+            "KanLai\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "apple",
+            "email": "admin@kanlai.com.cn"
+        }
+    ],
+    "require": {
+        "php": ">=8.2",
+        "guzzlehttp/guzzle": "^7.8.1",
+        "ext-openssl": "*",
+        "jaeger/querylist": "^4.2"
+    },
+    "config": {
+        "allow-plugins": {
+            "yurunsoft/composer-include-files": true,
+            "yurunsoft/guzzle-swoole": true
+        }
+    }
+}
