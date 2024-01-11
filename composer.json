@@ -1,5 +1,6 @@
 {
     "name": "kanlai/util",
+    "version": "1.0.4",
     "autoload": {
         "psr-4": {
             "KanLai\\": "src/"
